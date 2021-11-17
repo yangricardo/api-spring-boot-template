@@ -1,6 +1,7 @@
 package br.pucrio.les.esg_token_backend.models;
 
 import java.util.Date;
+import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -17,6 +18,9 @@ public abstract class BaseModel {
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "uuid", updatable = false, unique = true, nullable = false)
+    private UUID uuid;
 
     @Column
     protected Date createdAt;
@@ -48,8 +52,19 @@ public abstract class BaseModel {
         this.updatedAt = updatedAt;
     }
 
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
     @PrePersist
     public void onPrePersist() {
+        if (this.uuid == null) {
+            this.setUuid(UUID.randomUUID());
+        }
         if (this.createdAt == null) {
             this.createdAt = new Date();
             this.updatedAt = this.createdAt;
