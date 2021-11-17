@@ -4,3 +4,4 @@
 
 - Bootstrap project
 - spring boot database connection configuration
+- Value Model
