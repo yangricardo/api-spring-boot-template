@@ -13,6 +13,7 @@
   - create value
   - find by id value
   - update by id value
+  - delete by id value
 - values controller resource
 
   - find all values route: `[GET] /api/values`
@@ -58,7 +59,7 @@
       }
       ```
 
-  - update by id value route: `[POST] /api/values/{id}`
+  - update by id value route: `[PATCH] /api/values/{id}`
 
     - Resquest Body
 
@@ -76,3 +77,5 @@
         "value": "teste2"
       }
       ```
+
+  - delete by id value route: `[DELETE] /api/values/{id}`

@@ -41,4 +41,9 @@ public class ValueServiceImpl implements IValueService {
             return this.valueRepository.save(record);
         });
     }
+
+    @Override
+    public void delete(Long id) {
+        this.valueRepository.deleteById(id);
+    }
 }

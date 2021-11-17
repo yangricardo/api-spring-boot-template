@@ -14,4 +14,6 @@ public interface IValueService {
     public Optional<Value> findById(Long id);
 
     public Optional<Value> update(Long id, Value value);
+
+    public void delete(Long id);
 }

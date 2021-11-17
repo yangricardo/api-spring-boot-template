@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -48,5 +49,11 @@ public class ValueController {
     @ResponseStatus(code = HttpStatus.OK)
     Optional<Value> updateById(@PathVariable("id") Long id, @RequestBody Value value) {
         return this.valueService.update(id, value);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deleteById(@PathVariable("id") Long id) {
+        this.valueService.delete(id);
     }
 }
