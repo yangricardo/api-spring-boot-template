@@ -18,13 +18,14 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.Errors;
 
 import br.pucrio.les.esg_token_backend.models.Value;
 import br.pucrio.les.esg_token_backend.services.value.IValueService;
 
 @RestController
 @RequestMapping("/values")
-public class ValueController {
+public class ValueController extends BaseController {
     @Autowired
     private IValueService valueService;
 
@@ -52,8 +53,15 @@ public class ValueController {
 
     @PatchMapping("/{id}")
     @ResponseStatus(code = HttpStatus.OK)
-    Optional<Value> updateById(@PathVariable("id") Long id, @Valid @RequestBody Value value) {
-        return this.valueService.update(id, value);
+    ResponseEntity<?> updateById(@PathVariable("id") Long id, @Valid @RequestBody Value value, Errors errors) {
+        if (!errors.hasErrors()) {
+            return this.valueService.update(id, value).map(valueUpdated -> ResponseEntity.ok(valueUpdated))
+                    .orElseGet(() -> ResponseEntity.notFound().build());
+
+        } else {
+            // System.err.println(errors);
+            return badRequestValidationResponseEntity(errors);
+        }
     }
 
     @DeleteMapping("/{id}")

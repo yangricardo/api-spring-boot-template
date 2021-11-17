@@ -92,3 +92,4 @@
 - update delete route to improve response on not found resource
 - create BaseController handlers
   - badRequestValidationResponseEntity
+- improve error handles on update value route
