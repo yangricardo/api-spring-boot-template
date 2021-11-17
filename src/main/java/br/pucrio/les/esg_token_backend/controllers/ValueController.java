@@ -1,9 +1,11 @@
 package br.pucrio.les.esg_token_backend.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,5 +35,11 @@ public class ValueController {
     @ResponseStatus(code = HttpStatus.CREATED)
     Value create(@RequestBody Value value) {
         return this.valueService.create(value);
+    }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(code = HttpStatus.FOUND)
+    Optional<Value> findById(@PathVariable("id") Long id) {
+        return this.valueService.findById(id);
     }
 }

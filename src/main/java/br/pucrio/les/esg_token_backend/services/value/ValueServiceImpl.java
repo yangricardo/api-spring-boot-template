@@ -1,6 +1,7 @@
 package br.pucrio.les.esg_token_backend.services.value;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,5 +27,10 @@ public class ValueServiceImpl implements IValueService {
     @Override
     public Value create(Value value) {
         return this.valueRepository.save(value);
+    }
+
+    @Override
+    public Optional<Value> findById(Long id) {
+        return this.valueRepository.findById(id);
     }
 }

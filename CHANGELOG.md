@@ -11,6 +11,7 @@
 - value service
   - find all values
   - create value
+  - find by id value
 - values controller resource
 
   - find all values route: `[GET] /api/values`
@@ -35,6 +36,17 @@
         "value": "teste"
       }
       ```
+
+    - Response Body
+
+      ```json
+      {
+        "id": 1,
+        "value": "teste"
+      }
+      ```
+
+  - find by id value route: `[GET] /api/values/{id}`
 
     - Response Body
 
