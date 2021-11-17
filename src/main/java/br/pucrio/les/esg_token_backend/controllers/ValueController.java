@@ -1,7 +1,6 @@
 package br.pucrio.les.esg_token_backend.controllers;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -47,8 +46,9 @@ public class ValueController extends BaseController {
 
     @GetMapping("/{id}")
     @ResponseStatus(code = HttpStatus.FOUND)
-    Optional<Value> findById(@PathVariable("id") Long id) {
-        return this.valueService.findById(id);
+    ResponseEntity<?> findById(@PathVariable("id") Long id) {
+        return this.valueService.findById(id).map(value -> ResponseEntity.status(HttpStatus.FOUND).body(value))
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PatchMapping("/{id}")
