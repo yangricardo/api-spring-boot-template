@@ -6,3 +6,4 @@
 - spring boot database connection configuration
 - Value Model
 - Value JPA Repository
+- base Value Service
