@@ -9,3 +9,5 @@
 - base Value Service
 - autowire Value Service with Value Repository integration
 - find all value service
+- values controller resource
+  - find all values route
