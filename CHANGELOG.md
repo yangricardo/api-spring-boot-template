@@ -12,6 +12,7 @@
   - find all values
   - create value
   - find by id value
+  - update by id value
 - values controller resource
 
   - find all values route: `[GET] /api/values`
@@ -54,5 +55,24 @@
       {
         "id": 1,
         "value": "teste"
+      }
+      ```
+
+  - update by id value route: `[POST] /api/values/{id}`
+
+    - Resquest Body
+
+      ```json
+      {
+        "value": "teste2"
+      }
+      ```
+
+    - Response Body
+
+      ```json
+      {
+        "id": 1,
+        "value": "teste2"
       }
       ```

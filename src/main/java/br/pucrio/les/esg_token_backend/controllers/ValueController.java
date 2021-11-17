@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,5 +42,11 @@ public class ValueController {
     @ResponseStatus(code = HttpStatus.FOUND)
     Optional<Value> findById(@PathVariable("id") Long id) {
         return this.valueService.findById(id);
+    }
+
+    @PatchMapping("/{id}")
+    @ResponseStatus(code = HttpStatus.OK)
+    Optional<Value> updateById(@PathVariable("id") Long id, @RequestBody Value value) {
+        return this.valueService.update(id, value);
     }
 }

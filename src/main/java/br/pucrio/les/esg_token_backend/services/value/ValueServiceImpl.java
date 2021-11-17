@@ -33,4 +33,12 @@ public class ValueServiceImpl implements IValueService {
     public Optional<Value> findById(Long id) {
         return this.valueRepository.findById(id);
     }
+
+    @Override
+    public Optional<Value> update(Long id, Value value) {
+        return this.findById(id).map(record -> {
+            record.setValue(value.getValue());
+            return this.valueRepository.save(record);
+        });
+    }
 }

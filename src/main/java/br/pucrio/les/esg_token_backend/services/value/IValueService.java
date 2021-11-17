@@ -12,4 +12,6 @@ public interface IValueService {
     public Value create(Value value);
 
     public Optional<Value> findById(Long id);
+
+    public Optional<Value> update(Long id, Value value);
 }
