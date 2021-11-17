@@ -79,3 +79,8 @@
       ```
 
   - delete by id value route: `[DELETE] /api/values/{id}`
+
+- add value model validation rules
+  - can not be empty
+  - can not be blank
+  - the size must varies from 3 to 255 characters
