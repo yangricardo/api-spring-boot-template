@@ -40,8 +40,14 @@ public class ValueController extends BaseController {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    Value create(@Valid @RequestBody Value value) {
-        return this.valueService.create(value);
+    ResponseEntity<?> create(@Valid @RequestBody Value value, Errors errors) {
+        if (!errors.hasErrors()) {
+            Value valueCreated = this.valueService.create(value);
+            return ResponseEntity.status(HttpStatus.CREATED).body(valueCreated);
+        } else {
+            // System.err.println(errors);
+            return badRequestValidationResponseEntity(errors);
+        }
     }
 
     @GetMapping("/{id}")

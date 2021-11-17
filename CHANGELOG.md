@@ -94,3 +94,4 @@
   - badRequestValidationResponseEntity
 - improve error handles on update value route
 - improve error handles on find by id value route
+- improve error handles on create value route
