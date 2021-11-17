@@ -89,3 +89,4 @@
 - add PreUpdate model event that update updatedAt date
 - base model extraction of Long ID, Date createdAt and Date updatedAt columns
 - add UUID unique identifier to base model
+- update delete route to improve response on not found resource

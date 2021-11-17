@@ -13,9 +13,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
 import br.pucrio.les.esg_token_backend.models.Value;
 import br.pucrio.les.esg_token_backend.services.value.IValueService;
 
@@ -54,8 +57,13 @@ public class ValueController {
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(code = HttpStatus.NO_CONTENT)
-    void deleteById(@PathVariable("id") Long id) {
-        this.valueService.delete(id);
+    @ResponseBody
+    ResponseEntity<?> deleteById(@PathVariable("id") Long id) {
+        try {
+            this.valueService.delete(id);
+            return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
