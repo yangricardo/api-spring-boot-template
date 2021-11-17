@@ -24,6 +24,9 @@ public class Value {
     @Column
     private Date createdAt;
 
+    @Column
+    private Date updatedAt;
+
     public Value() {
     }
 
@@ -31,9 +34,10 @@ public class Value {
         this.value = value;
     }
 
-    public Value(String value, Date createdAt) {
+    public Value(String value, Date createdAt, Date updatedAt) {
         this.value = value;
         this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public void setValue(String value) {
@@ -60,10 +64,25 @@ public class Value {
         this.createdAt = createdAt;
     }
 
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
     @PrePersist
     public void onPrePersist() {
         if (this.createdAt == null) {
             this.createdAt = new Date();
+            this.updatedAt = this.createdAt;
         }
     }
+
+    @PreUpdate
+    public void onPreUpdate() {
+        this.updatedAt = new Date();
+    }
+
 }
