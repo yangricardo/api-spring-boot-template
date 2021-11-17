@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
@@ -21,6 +20,7 @@ import org.springframework.validation.Errors;
 
 import br.pucrio.les.esg_token_backend.models.Value;
 import br.pucrio.les.esg_token_backend.services.value.IValueService;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/values")
@@ -34,12 +34,13 @@ public class ValueController extends BaseController {
 
     @GetMapping
     @ResponseStatus(code = HttpStatus.FOUND)
+    @ApiOperation(value = "Find all values")
     List<Value> index() {
         return this.valueService.index();
     }
 
     @PostMapping
-    @ResponseStatus(code = HttpStatus.CREATED)
+    @ApiOperation(value = "Create value")
     ResponseEntity<?> create(@Valid @RequestBody Value value, Errors errors) {
         if (!errors.hasErrors()) {
             Value valueCreated = this.valueService.create(value);
@@ -51,14 +52,14 @@ public class ValueController extends BaseController {
     }
 
     @GetMapping("/{id}")
-    @ResponseStatus(code = HttpStatus.FOUND)
+    @ApiOperation(value = "Find value by id")
     ResponseEntity<?> findById(@PathVariable("id") Long id) {
         return this.valueService.findById(id).map(value -> ResponseEntity.status(HttpStatus.FOUND).body(value))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PatchMapping("/{id}")
-    @ResponseStatus(code = HttpStatus.OK)
+    @ApiOperation(value = "Update value by id")
     ResponseEntity<?> updateById(@PathVariable("id") Long id, @Valid @RequestBody Value value, Errors errors) {
         if (!errors.hasErrors()) {
             return this.valueService.update(id, value).map(valueUpdated -> ResponseEntity.ok(valueUpdated))
@@ -71,7 +72,7 @@ public class ValueController extends BaseController {
     }
 
     @DeleteMapping("/{id}")
-    @ResponseBody
+    @ApiOperation(value = "Delete value by id")
     ResponseEntity<?> deleteById(@PathVariable("id") Long id) {
         try {
             this.valueService.delete(id);
