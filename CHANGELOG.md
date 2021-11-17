@@ -12,4 +12,35 @@
   - find all values
   - create value
 - values controller resource
-  - find all values route
+
+  - find all values route: `[GET] /api/values`
+
+    - Response Body
+
+      ```json
+      [
+        {
+          "id": 1,
+          "value": "teste"
+        }
+      ]
+      ```
+
+  - create value route: `[POST] /api/values`
+
+    - Resquest Body
+
+      ```json
+      {
+        "value": "teste"
+      }
+      ```
+
+    - Response Body
+
+      ```json
+      {
+        "id": 1,
+        "value": "teste"
+      }
+      ```
