@@ -3,6 +3,8 @@ package br.pucrio.les.esg_token_backend.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,7 +37,7 @@ public class ValueController {
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    Value create(@RequestBody Value value) {
+    Value create(@Valid @RequestBody Value value) {
         return this.valueService.create(value);
     }
 
@@ -47,7 +49,7 @@ public class ValueController {
 
     @PatchMapping("/{id}")
     @ResponseStatus(code = HttpStatus.OK)
-    Optional<Value> updateById(@PathVariable("id") Long id, @RequestBody Value value) {
+    Optional<Value> updateById(@PathVariable("id") Long id, @Valid @RequestBody Value value) {
         return this.valueService.update(id, value);
     }
 
