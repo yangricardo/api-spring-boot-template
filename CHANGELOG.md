@@ -95,3 +95,4 @@
 - improve error handles on update value route
 - improve error handles on find by id value route
 - improve error handles on create value route
+- add spring-fox dependency to generate swagger documentation on `http://localhost:8080/api/swagger-ui/#/`
