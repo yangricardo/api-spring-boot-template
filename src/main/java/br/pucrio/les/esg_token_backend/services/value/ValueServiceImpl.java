@@ -22,4 +22,9 @@ public class ValueServiceImpl implements IValueService {
     public List<Value> index() {
         return this.valueRepository.findAll();
     }
+
+    @Override
+    public Value create(Value value) {
+        return this.valueRepository.save(value);
+    }
 }

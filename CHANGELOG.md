@@ -8,6 +8,8 @@
 - Value JPA Repository
 - base Value Service
 - autowire Value Service with Value Repository integration
-- find all value service
+- value service
+  - find all values
+  - create value
 - values controller resource
   - find all values route

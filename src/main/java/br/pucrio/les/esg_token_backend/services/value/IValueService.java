@@ -8,4 +8,5 @@ public interface IValueService {
 
     public List<Value> index();
 
+    public Value create(Value value);
 }
