@@ -87,3 +87,4 @@
 - add Valid annotation to validate request body based on value model validation rules to create and update by id routes
 - add PrePersist model event that adds createdAt and updatedAt date
 - add PreUpdate model event that update updatedAt date
+- base model extraction of Long ID, Date createdAt and Date updatedAt columns
