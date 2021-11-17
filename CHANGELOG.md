@@ -7,3 +7,4 @@
 - Value Model
 - Value JPA Repository
 - base Value Service
+- autowire Value Service with Value Repository integration
