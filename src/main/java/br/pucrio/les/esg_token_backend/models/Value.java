@@ -1,5 +1,7 @@
 package br.pucrio.les.esg_token_backend.models;
 
+import java.util.Date;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
@@ -19,11 +21,19 @@ public class Value {
     @Size(min = 3, max = 255)
     private String value;
 
+    @Column
+    private Date createdAt;
+
     public Value() {
     }
 
     public Value(String value) {
         this.value = value;
+    }
+
+    public Value(String value, Date createdAt) {
+        this.value = value;
+        this.createdAt = createdAt;
     }
 
     public void setValue(String value) {
@@ -40,5 +50,20 @@ public class Value {
 
     public Long getId() {
         return id;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    @PrePersist
+    public void onPrePersist() {
+        if (this.createdAt == null) {
+            this.createdAt = new Date();
+        }
     }
 }

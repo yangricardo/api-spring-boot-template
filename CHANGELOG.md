@@ -85,3 +85,4 @@
   - can not be blank
   - the size must varies from 3 to 255 characters
 - add Valid annotation to validate request body based on value model validation rules to create and update by id routes
+- add PrePersist model event that adds createdAt date
