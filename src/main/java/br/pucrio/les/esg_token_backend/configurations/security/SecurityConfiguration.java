@@ -11,8 +11,11 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import br.pucrio.les.esg_token_backend.resources.auth.services.AuthenticationService;
 import br.pucrio.les.esg_token_backend.resources.auth.services.TokenAuthenticationFilterService;
 
 @EnableWebSecurity
@@ -20,11 +23,7 @@ import br.pucrio.les.esg_token_backend.resources.auth.services.TokenAuthenticati
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    TokenAuthenticationFilterService tokenAuthenticationFilterService;
-
-    public SecurityConfiguration(TokenAuthenticationFilterService tokenAuthenticationFilterService) {
-        this.tokenAuthenticationFilterService = tokenAuthenticationFilterService;
-    }
+    private AuthenticationService authenticationService;
 
     @Override
     @Bean
@@ -32,16 +31,26 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return super.authenticationManager();
     }
 
+    @Autowired
+    TokenAuthenticationFilterService tokenAuthenticationFilterService;
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
     // Configurations for authentication
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(authenticationService).passwordEncoder(this.passwordEncoder());
     }
 
     // Configuration for authorization
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/auth").permitAll().anyRequest().authenticated().and()
-                .csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+        http.authorizeRequests().antMatchers(HttpMethod.POST, "/auth").permitAll().antMatchers("/esg-transfers")
+                .permitAll().antMatchers("/values").permitAll().anyRequest().authenticated().and().csrf().disable()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .addFilterBefore(this.tokenAuthenticationFilterService, UsernamePasswordAuthenticationFilter.class);
         ;
     }
