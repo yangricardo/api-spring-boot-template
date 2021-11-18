@@ -13,6 +13,7 @@
 - review source folder structure
 - start spring security integration
   - add dependencies
+  - enable base security configuration context
 
 ## 2021.11.17
 
