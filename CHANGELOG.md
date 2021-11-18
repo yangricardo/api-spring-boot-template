@@ -107,3 +107,4 @@
   - Keycloak client configuration service
   - Keycloak RoleService provider implementation
   - Keycloak GroupService provider implementation
+  - Keycloak UserService provider implementation
