@@ -105,3 +105,4 @@
   - install dependencies for client keycloak realm management
   - environment variables for keycloak management integration
   - Keycloak client configuration service
+  - Keycloak RoleService provider implementation
