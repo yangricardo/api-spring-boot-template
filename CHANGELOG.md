@@ -121,3 +121,4 @@
 - cross origin definition on BaseController
 - JWT Keycloak integration
   - add dependencies
+  - add environment properties
