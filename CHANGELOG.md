@@ -112,3 +112,5 @@
 - cross origin definition on BaseController
 
 - implement EsgTransfer entity model
+- implement EsgTransfer Repository
+- implement EsgTransfer Crud Service
