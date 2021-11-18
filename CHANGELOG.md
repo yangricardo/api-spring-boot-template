@@ -16,6 +16,7 @@
   - enable base security configuration context
   - create auth controller route
   - stateless http security configuration for `/auth` route
+  - add spring AuthtenticationManager to handle authentications
 
 ## 2021.11.17
 
