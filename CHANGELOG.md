@@ -109,3 +109,4 @@
   - Keycloak GroupService provider implementation
   - Keycloak UserService provider implementation
   - Keycloak Controller for User, Roles and Groups creation and list
+- cross origin definition on BaseController
