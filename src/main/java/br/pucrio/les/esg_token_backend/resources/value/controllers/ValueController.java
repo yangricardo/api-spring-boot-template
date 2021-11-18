@@ -18,7 +18,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
 
-import br.pucrio.les.esg_token_backend.configurations.controllers.BaseController;
+import br.pucrio.les.esg_token_backend.configurations.base.controllers.BaseController;
 import br.pucrio.les.esg_token_backend.resources.value.model.Value;
 import br.pucrio.les.esg_token_backend.resources.value.services.IValueService;
 import io.swagger.annotations.ApiOperation;

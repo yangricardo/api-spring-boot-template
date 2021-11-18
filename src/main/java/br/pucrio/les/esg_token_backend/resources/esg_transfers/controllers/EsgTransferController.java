@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.pucrio.les.esg_token_backend.configurations.controllers.BaseController;
+import br.pucrio.les.esg_token_backend.configurations.base.controllers.BaseController;
 import br.pucrio.les.esg_token_backend.resources.esg_transfers.model.EsgTransfer;
 import br.pucrio.les.esg_token_backend.resources.esg_transfers.services.IEsgTransferService;
 import io.swagger.annotations.ApiOperation;

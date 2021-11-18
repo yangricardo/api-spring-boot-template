@@ -1,4 +1,4 @@
-package br.pucrio.les.esg_token_backend.configurations.controllers;
+package br.pucrio.les.esg_token_backend.configurations.base.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
