@@ -9,6 +9,7 @@
   - list esg transfers
   - create esg transfer
 - update insomnia
+- detach keycloak modules and configurations to `keycloak-tests` branch
 
 ## 2021.11.17
 
