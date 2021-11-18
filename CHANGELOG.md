@@ -106,3 +106,4 @@
   - environment variables for keycloak management integration
   - Keycloak client configuration service
   - Keycloak RoleService provider implementation
+  - Keycloak GroupService provider implementation
