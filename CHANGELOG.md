@@ -8,6 +8,7 @@
 - implement EsgTransfer Controller to `/api/esg-transfers` resource
   - list esg transfers
   - create esg transfer
+- update insomnia
 
 ## 2021.11.17
 
