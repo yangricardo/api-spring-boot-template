@@ -11,6 +11,8 @@
 - update insomnia
 - detach keycloak modules and configurations to `keycloak-tests` branch
 - review source folder structure
+- start spring security integration
+  - add dependencies
 
 ## 2021.11.17
 
