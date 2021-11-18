@@ -15,6 +15,7 @@
   - add dependencies
   - enable base security configuration context
   - create auth controller route
+  - stateless http security configuration for `/auth` route
 
 ## 2021.11.17
 
