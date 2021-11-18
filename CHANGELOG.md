@@ -125,3 +125,4 @@
   - KeycloakJwtAuthenticationConverter - configuration class for keycloak realm management
   - ResourceServer to routes authorization
   - SignUp route controller
+  - Test Authorization Security controller
