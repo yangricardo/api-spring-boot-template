@@ -28,6 +28,7 @@
   - TokenAuthenticationFilter service implementation
   - Add JWT token valiations
   - Fix User authorization profiles
+  - add TokenAuthenticationFilterService to security configuration context for HTTP security
 
 ## 2021.11.17
 
