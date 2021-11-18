@@ -1,5 +1,14 @@
 # Changelog
 
+## 2021.11.18
+
+- implement EsgTransfer entity model
+- implement EsgTransfer Repository
+- implement EsgTransfer Crud Service
+- implement EsgTransfer Controller to `/api/esg-transfers` resource
+  - list esg transfers
+  - create esg transfer
+
 ## 2021.11.17
 
 - Bootstrap project
@@ -110,10 +119,5 @@
   - Keycloak UserService provider implementation
   - Keycloak Controller for User, Roles and Groups creation and list
 - cross origin definition on BaseController
-
-- implement EsgTransfer entity model
-- implement EsgTransfer Repository
-- implement EsgTransfer Crud Service
-- implement EsgTransfer Controller to `/api/esg-transfers` resource
-  - list esg transfers
-  - create esg transfer
+- JWT Keycloak integration
+  - add dependencies
