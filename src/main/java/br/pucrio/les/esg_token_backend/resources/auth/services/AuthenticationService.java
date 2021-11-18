@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import br.pucrio.les.esg_token_backend.resources.auth.model.CreateUserDTO;
 import br.pucrio.les.esg_token_backend.resources.users.model.User;
 import br.pucrio.les.esg_token_backend.resources.users.services.IUserService;
 
@@ -16,6 +18,9 @@ public class AuthenticationService implements UserDetailsService {
 
     @Autowired
     private IUserService userService;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     public AuthenticationService(IUserService userService) {
         this.userService = userService;
@@ -29,6 +34,18 @@ public class AuthenticationService implements UserDetailsService {
         }
 
         throw new UsernameNotFoundException("User not found");
+    }
+
+    public User createUser(CreateUserDTO createUserDTO) throws Exception {
+        Optional<User> userFound = this.userService.findByEmail(createUserDTO.getEmail());
+        if (userFound.isPresent()) {
+            throw new Exception("Email alreary Taken");
+        }
+        User user = new User();
+        user.setUsername(createUserDTO.getUsername());
+        user.setEmail(createUserDTO.getEmail());
+        user.setPassword(passwordEncoder.encode(createUserDTO.getPassword()));
+        return userService.create(user);
     }
 
 }
