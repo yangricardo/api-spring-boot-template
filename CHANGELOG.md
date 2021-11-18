@@ -17,6 +17,7 @@
   - create auth controller route
   - stateless http security configuration for `/auth` route
   - add spring AuthtenticationManager to handle authentications
+  - implement `User` and `AuthorizationProfile` based on spring security models
 
 ## 2021.11.17
 
