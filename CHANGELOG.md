@@ -124,3 +124,4 @@
   - add environment properties
   - KeycloakJwtAuthenticationConverter - configuration class for keycloak realm management
   - ResourceServer to routes authorization
+  - SignUp route controller
