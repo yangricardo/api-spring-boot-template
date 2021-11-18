@@ -1,9 +1,9 @@
-package br.pucrio.les.esg_token_backend.services.value;
+package br.pucrio.les.esg_token_backend.resources.value.services;
 
 import java.util.List;
 import java.util.Optional;
 
-import br.pucrio.les.esg_token_backend.models.Value;
+import br.pucrio.les.esg_token_backend.resources.value.model.Value;
 
 public interface IValueService {
 

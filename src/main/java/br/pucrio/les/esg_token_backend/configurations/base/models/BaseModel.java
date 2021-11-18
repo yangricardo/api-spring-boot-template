@@ -1,4 +1,4 @@
-package br.pucrio.les.esg_token_backend.models;
+package br.pucrio.les.esg_token_backend.configurations.base.models;
 
 import java.util.Date;
 import java.util.UUID;

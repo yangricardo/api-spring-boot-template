@@ -1,4 +1,4 @@
-package br.pucrio.les.esg_token_backend.services.value;
+package br.pucrio.les.esg_token_backend.resources.value.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.pucrio.les.esg_token_backend.models.Value;
-import br.pucrio.les.esg_token_backend.repository.IValueRepository;
+import br.pucrio.les.esg_token_backend.resources.value.model.Value;
+import br.pucrio.les.esg_token_backend.resources.value.repository.IValueRepository;
 
 @Service
 public class ValueServiceImpl implements IValueService {

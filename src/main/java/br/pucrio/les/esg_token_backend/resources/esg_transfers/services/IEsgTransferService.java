@@ -1,9 +1,9 @@
-package br.pucrio.les.esg_token_backend.services.esg_transfer;
+package br.pucrio.les.esg_token_backend.resources.esg_transfers.services;
 
 import java.util.List;
 import java.util.Optional;
 
-import br.pucrio.les.esg_token_backend.models.EsgTransfer;
+import br.pucrio.les.esg_token_backend.resources.esg_transfers.model.EsgTransfer;
 
 public interface IEsgTransferService {
 

@@ -1,4 +1,4 @@
-package br.pucrio.les.esg_token_backend.controllers;
+package br.pucrio.les.esg_token_backend.resources.esg_transfers.controllers;
 
 import java.util.List;
 
@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.pucrio.les.esg_token_backend.models.EsgTransfer;
-import br.pucrio.les.esg_token_backend.services.esg_transfer.IEsgTransferService;
+import br.pucrio.les.esg_token_backend.configurations.controllers.BaseController;
+import br.pucrio.les.esg_token_backend.resources.esg_transfers.model.EsgTransfer;
+import br.pucrio.les.esg_token_backend.resources.esg_transfers.services.IEsgTransferService;
 import io.swagger.annotations.ApiOperation;
 
 @RestController

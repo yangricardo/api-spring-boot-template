@@ -1,8 +1,10 @@
-package br.pucrio.les.esg_token_backend.models;
+package br.pucrio.les.esg_token_backend.resources.esg_transfers.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
+import br.pucrio.les.esg_token_backend.configurations.base.models.BaseModel;
 
 @Entity
 @Table(name = "esg_transfers")

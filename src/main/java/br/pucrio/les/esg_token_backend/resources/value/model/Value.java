@@ -1,9 +1,11 @@
-package br.pucrio.les.esg_token_backend.models;
+package br.pucrio.les.esg_token_backend.resources.value.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+
+import br.pucrio.les.esg_token_backend.configurations.base.models.BaseModel;
 
 @Entity
 @Table(name = "value")
