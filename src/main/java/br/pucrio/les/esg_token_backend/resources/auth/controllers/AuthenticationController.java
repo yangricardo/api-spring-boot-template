@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.pucrio.les.esg_token_backend.configurations.base.controllers.BaseController;
 import br.pucrio.les.esg_token_backend.resources.auth.model.CreateUserDTO;
 import br.pucrio.les.esg_token_backend.resources.auth.model.LoginDTO;
 import br.pucrio.les.esg_token_backend.resources.auth.model.TokenDTO;
@@ -21,7 +22,7 @@ import br.pucrio.les.esg_token_backend.resources.users.model.User;
 
 @RestController
 @RequestMapping("/auth")
-public class AuthenticationController {
+public class AuthenticationController extends BaseController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
