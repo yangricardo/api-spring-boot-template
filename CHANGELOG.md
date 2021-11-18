@@ -12,6 +12,7 @@
 - detach keycloak modules and configurations to `keycloak-tests` branch
 - review source folder structure
 - start spring security integration
+
   - add dependencies
   - enable base security configuration context
   - create auth controller route
@@ -19,6 +20,9 @@
   - add spring AuthtenticationManager to handle authentications
   - implement `User` and `AuthorizationProfile` based on spring security models
   - implement IUserReposity following JpaRepository interface
+  - implement UserService adapter for IUserRepository
+
+  -
 
 ## 2021.11.17
 
