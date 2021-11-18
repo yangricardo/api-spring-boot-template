@@ -23,8 +23,8 @@
   - implement UserService adapter for IUserRepository
   - implement AuthenticatonService based on spring UserDetailsService
   - IUserRepositiy and UserService update to load user by username
-
-  -
+  - Add environment variables for Token Service
+  - TokenIssuerService implementation to issue JWT
 
 ## 2021.11.17
 
