@@ -31,6 +31,8 @@
   - add TokenAuthenticationFilterService to security configuration context for HTTP security
   - add authentication manager builder with bcrypt password encoder
   - login route (before signup)
+  - signup authentication service
+  - login and signup routes
 
 ## 2021.11.17
 

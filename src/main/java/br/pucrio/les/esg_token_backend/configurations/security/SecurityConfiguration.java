@@ -48,8 +48,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     // Configuration for authorization
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers(HttpMethod.POST, "/auth").permitAll().antMatchers("/esg-transfers")
-                .permitAll().antMatchers("/values").permitAll().anyRequest().authenticated().and().csrf().disable()
+        http.authorizeRequests().antMatchers(HttpMethod.POST, "/auth/**").permitAll().antMatchers("/esg-transfers/**")
+                .permitAll().antMatchers("/values/**").permitAll().anyRequest().authenticated().and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .addFilterBefore(this.tokenAuthenticationFilterService, UsernamePasswordAuthenticationFilter.class);
         ;
