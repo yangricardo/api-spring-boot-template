@@ -33,6 +33,7 @@
   - login route (before signup)
   - signup authentication service
   - login and signup routes
+  - update insomnia with auth routes
 
 ## 2021.11.17
 
