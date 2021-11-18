@@ -102,3 +102,4 @@
 - integrate with keycloak for user management
   - [user, roles, and groups management](https://codersee.com/how-to-set-up-keycloak-admin-client-with-spring-boot-and-kotlin/)
   - keycloak docker compose service definition
+  - install dependencies for client keycloak realm management
