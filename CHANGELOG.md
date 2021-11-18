@@ -30,6 +30,7 @@
   - Fix User authorization profiles
   - add TokenAuthenticationFilterService to security configuration context for HTTP security
   - add authentication manager builder with bcrypt password encoder
+  - login route (before signup)
 
 ## 2021.11.17
 
