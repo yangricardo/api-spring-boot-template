@@ -14,6 +14,7 @@
 - start spring security integration
   - add dependencies
   - enable base security configuration context
+  - create auth controller route
 
 ## 2021.11.17
 
