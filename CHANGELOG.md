@@ -99,3 +99,6 @@
 - add ApiOperation annotations to describe the routes
 - api dockerization
 - add insomnia json request collection
+- integrate with keycloak for user management
+  - [user, roles, and groups management](https://codersee.com/how-to-set-up-keycloak-admin-client-with-spring-boot-and-kotlin/)
+  - keycloak docker compose service definition
