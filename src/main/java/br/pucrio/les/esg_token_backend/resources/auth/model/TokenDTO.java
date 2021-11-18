@@ -1,10 +1,8 @@
 package br.pucrio.les.esg_token_backend.resources.auth.model;
 
-import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
 public class TokenDTO {
 
     private String type;
