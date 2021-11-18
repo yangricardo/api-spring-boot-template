@@ -104,3 +104,4 @@
   - keycloak docker compose service definition
   - install dependencies for client keycloak realm management
   - environment variables for keycloak management integration
+  - Keycloak client configuration service
