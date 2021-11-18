@@ -122,3 +122,4 @@
 - JWT Keycloak integration
   - add dependencies
   - add environment properties
+  - KeycloakJwtAuthenticationConverter - configuration class for keycloak realm management
