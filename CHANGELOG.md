@@ -110,3 +110,5 @@
   - Keycloak UserService provider implementation
   - Keycloak Controller for User, Roles and Groups creation and list
 - cross origin definition on BaseController
+
+- implement EsgTransfer entity model
