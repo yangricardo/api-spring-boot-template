@@ -25,6 +25,9 @@
   - IUserRepositiy and UserService update to load user by username
   - Add environment variables for Token Service
   - TokenIssuerService implementation to issue JWT
+  - TokenAuthenticationFilter service implementation
+  - Add JWT token valiations
+  - Fix User authorization profiles
 
 ## 2021.11.17
 
