@@ -114,3 +114,6 @@
 - implement EsgTransfer entity model
 - implement EsgTransfer Repository
 - implement EsgTransfer Crud Service
+- implement EsgTransfer Controller to `/api/esg-transfers` resource
+  - list esg transfers
+  - create esg transfer
