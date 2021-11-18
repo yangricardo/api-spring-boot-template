@@ -21,6 +21,8 @@
   - implement `User` and `AuthorizationProfile` based on spring security models
   - implement IUserReposity following JpaRepository interface
   - implement UserService adapter for IUserRepository
+  - implement AuthenticatonService based on spring UserDetailsService
+  - IUserRepositiy and UserService update to load user by username
 
   -
 

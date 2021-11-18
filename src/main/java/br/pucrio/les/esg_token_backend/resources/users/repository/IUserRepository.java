@@ -12,4 +12,6 @@ import br.pucrio.les.esg_token_backend.resources.users.model.User;
 @Transactional
 public interface IUserRepository extends CrudRepository<User, Long> {
     Optional<User> findByEmail(String email);
+
+    Optional<User> findByUsername(String username);
 }

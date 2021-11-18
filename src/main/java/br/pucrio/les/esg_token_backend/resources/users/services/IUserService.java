@@ -10,6 +10,8 @@ public interface IUserService {
 
     Optional<User> findByEmail(String email);
 
+    Optional<User> findByUsername(String username);
+
     User create(User user);
 
 }
