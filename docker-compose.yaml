@@ -3,8 +3,8 @@ version: '3'
 services:
   postgres:
     image: postgres:13
-    container_name: postgres.esg-token
-    hostname: postgres.esg-token
+    container_name: postgres.api-spring-boot
+    hostname: postgres.api-spring-boot
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
@@ -17,10 +17,10 @@ services:
       - ./databases/postgres/data:/var/lib/postgresql/data
 
   api:
-    image: esg-token-backend:latest
-    container_name: api.esg-token
-    hostname: api.esg-token
+    image: api-spring-boot:latest
+    container_name: api.api-spring-boot
+    hostname: api.api-spring-boot
     env_file:
-      - ./esg-token-backend.env
+      - ./api-spring-boot-backend.env
     ports:
       - "8080:8080"

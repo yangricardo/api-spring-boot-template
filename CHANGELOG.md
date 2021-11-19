@@ -2,14 +2,6 @@
 
 ## 2021.11.18
 
-- implement EsgTransfer entity model
-- implement EsgTransfer Repository
-- implement EsgTransfer Crud Service
-- implement EsgTransfer Controller to `/api/esg-transfers` resource
-  - list esg transfers
-  - create esg transfer
-- update insomnia
-- detach keycloak modules and configurations to `keycloak-tests` branch
 - review source folder structure
 - start spring security integration
 
@@ -134,21 +126,4 @@
 - add ApiOperation annotations to describe the routes
 - api dockerization
 - add insomnia json request collection
-- integrate with keycloak for user management
-  - [user, roles, and groups management](https://codersee.com/how-to-set-up-keycloak-admin-client-with-spring-boot-and-kotlin/)
-  - keycloak docker compose service definition
-  - install dependencies for client keycloak realm management
-  - environment variables for keycloak management integration
-  - Keycloak client configuration service
-  - Keycloak RoleService provider implementation
-  - Keycloak GroupService provider implementation
-  - Keycloak UserService provider implementation
-  - Keycloak Controller for User, Roles and Groups creation and list
 - cross origin definition on BaseController
-- JWT Keycloak integration
-  - add dependencies
-  - add environment properties
-  - KeycloakJwtAuthenticationConverter - configuration class for keycloak realm management
-  - ResourceServer to routes authorization
-  - SignUp route controller
-  - Test Authorization Security controller
