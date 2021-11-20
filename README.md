@@ -130,9 +130,21 @@ src/main/java/com/github/yangricardo/api_spring_boot/modules/users
 
 ## Libraries Usage
 
-### [Lombok](https://projectlombok.org)
+### Avoid basic implementations with [Lombok](https://projectlombok.org) annotations
 
 Recommended usage as it provide annotations that avoid the write of bloated code, as it turns easier to write class without the need to implement constructors, builders, getters and setters methods
+
+### Validate classes contend with [Javax Validation](https://www.baeldung.com/javax-validation) and [Hiberna](https://hibernate.org/validator/) annotations
+
+Recommended to usage on Classes content validation.
+
+### Disposes SWAGGER based documentation with [SpringFox](springfox-boot-starter)
+
+Recommended to dispose the REST API endpoints available and document it's usage
+
+### [Spring Boot Dev Tools](https://www.baeldung.com/spring-boot-devtools)
+
+Enhance development experience
 
 ## Required Environment
 
