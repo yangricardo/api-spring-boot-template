@@ -132,9 +132,21 @@ src/main/java/com/github/yangricardo/api_spring_boot/modules/users
 
 ### Java Requirements
 
-Java 11
+- Java 11
 
-#### Java Installation with ASDF
+### Database Requirements
+
+This project uses `Postgres` as main database for JPA integration. If you use another, update the configuration for integrate with another database like `MySQL` or `SQL Server`.
+
+> This project provides a [docker-compose.yaml](./docker-compose.yaml) with default database
+
+### Docker Requirements
+
+This project provides a [Dockerfile](Dockerfile) and [docker-compose.yaml](./docker-compose.yaml) with default configurations for the dockerization of this api. Also is provided a [shell build script](build.sh) that performs `Maven` and `Docker Image` build executions.
+
+## Development Environment
+
+### Java Installation with ASDF
 
 1. Install the [ASDF](<[asdf-vm.com/#/core-manage-asdf](https://asdf-vm.com/guide/getting-started.html#getting-started)>)
 
@@ -152,12 +164,24 @@ Java 11
 
 5. Enable the Java's ASDF installed version globally: `asdf global java corretto-11.0.13.8.1`
 
-### Database Requirements
+### Visual Studio Code
 
-This project uses `Postgres` as main database for JPA integration. If you use another, update the configuration for integrate with another database like `MySQL` or `SQL Server`.
+1. Install the [Visual Studio Code](https://code.visualstudio.com)
+2. Install the [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+3. Install the [Spring Boot Tools](https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-spring-boot)
+4. Make sure that the environment recognizes your Java Runtime.
 
-> This project provides a [docker-compose.yaml](./docker-compose.yaml) with default database
+   > Sometimes, the ASDF Java installation is not recognized by Visual Studio code. In that case, update the settings.json by going on the `Preferences > Settings` add add or update with the following sample, changing with your path for the JAVA_HOME and Java Runtimes:
 
-### Docker Requirements
-
-This project provides a [Dockerfile](Dockerfile) and [docker-compose.yaml](./docker-compose.yaml) with default configurations for the dockerization of this api. Also is provided a [shell build script](build.sh) that performs `Maven` and `Docker Image` build executions.
+```json
+{
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-11",
+      "path": "/home/kali/.asdf/installs/java/corretto-11.0.13.8.1",
+      "default": true
+    }
+  ],
+  "java.home": "/home/kali/.asdf/installs/java/corretto-11.0.13.8.1"
+}
+```
