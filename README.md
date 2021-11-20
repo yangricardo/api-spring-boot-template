@@ -150,6 +150,15 @@ See the implementation of the Bean object mapper at [ObjectMapperConfiguration](
 
 Enhance development experience
 
+### Making HTTP calls for externals services with [WebClient](https://www.baeldung.com/spring-5-webclient) from [Spring WebFlux](https://www.baeldung.com/spring-webflux)
+
+The WebClient is part of [Spring WebFlux](https://www.baeldung.com/spring-webflux) library and perform modern ways to handle both client and server operations.
+The WebClient provides easy way to handle HTTP requests based on [Spring WebFlux](https://www.baeldung.com/spring-webflux) concepts of Reactive requests
+
+### Becoming an Reactive Rest API with [Spring WebFlux](https://www.baeldung.com/spring-webflux)
+
+> TODO
+
 ## Required Environment
 
 ### Java Requirements
