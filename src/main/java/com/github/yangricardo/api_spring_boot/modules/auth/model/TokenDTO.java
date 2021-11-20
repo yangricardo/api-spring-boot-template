@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class TokenDTO {
 
-    private String type;
-    private String token;
+  private String type;
+  private String token;
 }

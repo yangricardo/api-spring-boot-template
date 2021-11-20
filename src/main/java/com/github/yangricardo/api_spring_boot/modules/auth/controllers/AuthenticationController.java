@@ -7,7 +7,6 @@ import com.github.yangricardo.api_spring_boot.modules.auth.services.Authenticati
 import com.github.yangricardo.api_spring_boot.modules.auth.services.TokenIssuerService;
 import com.github.yangricardo.api_spring_boot.modules.users.model.User;
 import com.github.yangricardo.api_spring_boot.shared.modules.controllers.BaseController;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,36 +23,34 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/auth")
 public class AuthenticationController extends BaseController {
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
+  @Autowired
+  private AuthenticationManager authenticationManager;
 
-    @Autowired
-    private AuthenticationService authenticationService;
+  @Autowired
+  private AuthenticationService authenticationService;
 
-    @Autowired
-    private TokenIssuerService tokenIssuerService;
+  @Autowired
+  private TokenIssuerService tokenIssuerService;
 
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody @Validated LoginDTO loginDTO) {
-        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
-                loginDTO.getUsername(), loginDTO.getPassword());
+  @PostMapping("/login")
+  public ResponseEntity<?> login(@RequestBody @Validated LoginDTO loginDTO) {
+    UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
+        loginDTO.getUsername(), loginDTO.getPassword());
 
-        Authentication authentication = authenticationManager.authenticate(usernamePasswordAuthenticationToken);
+    Authentication authentication = authenticationManager.authenticate(usernamePasswordAuthenticationToken);
 
-        String jwt = tokenIssuerService.generateToken(authentication);
-        TokenDTO token = TokenDTO.builder().token(jwt).type("Bearer").build();
-        return ResponseEntity.ok(token);
+    String jwt = tokenIssuerService.generateToken(authentication);
+    TokenDTO token = TokenDTO.builder().token(jwt).type("Bearer").build();
+    return ResponseEntity.ok(token);
+  }
 
+  @PostMapping("/sign-up")
+  public ResponseEntity<?> signUp(@RequestBody CreateUserDTO createUserDTO) {
+    try {
+      User user = authenticationService.createUser(createUserDTO);
+      return ResponseEntity.ok(user);
+    } catch (Exception e) {
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
     }
-
-    @PostMapping("/sign-up")
-    public ResponseEntity<?> signUp(@RequestBody CreateUserDTO createUserDTO) {
-        try {
-            User user = authenticationService.createUser(createUserDTO);
-            return ResponseEntity.ok(user);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-        }
-
-    }
+  }
 }

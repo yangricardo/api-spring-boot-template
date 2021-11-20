@@ -8,6 +8,7 @@
 - Serializing operations of Java classes to JSON objects notation
 - Sample of external http rest api call on [HttpRequestSampleController](src/main/java/com/github/yangricardo/api_spring_boot/modules/http_request_sample/controllers/HttpRequestSampleController.java)
 - enable of Spring WebFlux
+- Fix Swagger Spring Fox Permitions due Spring Security Integration
 
 ## 2021.11.18
 
