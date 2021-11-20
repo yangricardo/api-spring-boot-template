@@ -15,7 +15,7 @@
             "method": "POST",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n\t\"username\": \"yang\",\n\t\"password\": \"123456\"\n}"
+                "text": "{\n\t\"username\": \"yangricardo\",\n\t\"password\": \"123456\"\n}"
             },
             "parameters": [],
             "headers": [
@@ -69,7 +69,7 @@
             "method": "POST",
             "body": {
                 "mimeType": "application/json",
-                "text": "{\n\t\"username\": \"yang\",\n\t\"email\": \"yang@mail.com\",\n\t\"password\": \"123456\"\n}"
+                "text": "{\n\t\"username\": \"yangricardo\",\n\t\"email\": \"yangricardo@mail.com\",\n\t\"password\": \"123456\"\n}"
             },
             "parameters": [],
             "headers": [

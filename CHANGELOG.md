@@ -1,5 +1,10 @@
 # Changelog
 
+## 2021.11.20
+
+- Readme project explanation
+- Standardization of project for `com.github.yangricardo` base package
+
 ## 2021.11.18
 
 - review source folder structure

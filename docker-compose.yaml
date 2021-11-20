@@ -21,6 +21,6 @@ services:
     container_name: api.api-spring-boot
     hostname: api.api-spring-boot
     env_file:
-      - ./api-spring-boot-backend.env
+      - ./api-spring-boot.env
     ports:
       - "8080:8080"
