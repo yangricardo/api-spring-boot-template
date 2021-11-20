@@ -4,6 +4,8 @@
 
 - Readme project explanation
 - Standardization of project for `com.github.yangricardo` base package
+- Lombok classes definition improvement
+- Serializing operations of Java classes to JSON objects notation
 
 ## 2021.11.18
 

@@ -142,6 +142,10 @@ Recommended to usage on Classes content validation.
 
 Recommended to dispose the REST API endpoints available and document it's usage
 
+### Serializing operations of Java classes to JSON objects notation with [Jackson object mappers](https://www.baeldung.com/jackson)
+
+See the implementation of the Bean object mapper at [ObjectMapperConfiguration](src/main/java/com/github/yangricardo/api_spring_boot/shared/configurations/common/ObjectMapperConfiguration.java) to use `@Autowired` object or create variations for the bean context application object
+
 ### [Spring Boot Dev Tools](https://www.baeldung.com/spring-boot-devtools)
 
 Enhance development experience
