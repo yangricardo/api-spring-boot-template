@@ -7,8 +7,19 @@ import com.github.yangricardo.api_spring_boot.shared.modules.models.BaseModel;
 
 import org.springframework.security.core.GrantedAuthority;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name = "authorization_profiles")
+@Builder
+@Data
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class AuthorizationProfile extends BaseModel implements GrantedAuthority {
 
     private String authority;
@@ -18,7 +29,4 @@ public class AuthorizationProfile extends BaseModel implements GrantedAuthority 
         return this.authority;
     }
 
-    public void setAuthority(String authority) {
-        this.authority = authority;
-    }
 }

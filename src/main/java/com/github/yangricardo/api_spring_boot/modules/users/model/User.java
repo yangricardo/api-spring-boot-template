@@ -13,8 +13,19 @@ import com.github.yangricardo.api_spring_boot.shared.modules.models.BaseModel;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name = "users")
+@Builder
+@Data
+@EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class User extends BaseModel implements UserDetails {
 
     private String username;
@@ -36,25 +47,9 @@ public class User extends BaseModel implements UserDetails {
         return this.password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     @Override
     public String getUsername() {
         return this.username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     @Override
@@ -77,11 +72,4 @@ public class User extends BaseModel implements UserDetails {
         return true;
     }
 
-    public Set<AuthorizationProfile> getAuthorizationProfiles() {
-        return this.authorizationProfiles;
-    }
-
-    public void setAuthorizationProfiles(Set<AuthorizationProfile> authorizationProfiles) {
-        this.authorizationProfiles = authorizationProfiles;
-    }
 }

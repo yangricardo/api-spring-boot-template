@@ -128,6 +128,12 @@ src/main/java/com/github/yangricardo/api_spring_boot/modules/users
 
 > This is an base implementation for users resources. Note that the [User](src/main/java/com/github/yangricardo/api_spring_boot/modules/users/model/User.java) model implements an `UserDetails` Spring Security interface and has could have many [AuthorizationProfile](src/main/java/com/github/yangricardo/api_spring_boot/modules/users/model/AuthorizationProfile.java) records, that implements the `GrantedAuthority` Spring Security interface in order to implement RBAC functionalities for roles and privileges management.
 
+## Libraries Usage
+
+### [Lombok](https://projectlombok.org)
+
+Recommended usage as it provide annotations that avoid the write of bloated code, as it turns easier to write class without the need to implement constructors, builders, getters and setters methods
+
 ## Required Environment
 
 ### Java Requirements
@@ -173,15 +179,17 @@ This project provides a [Dockerfile](Dockerfile) and [docker-compose.yaml](./doc
 
    > Sometimes, the ASDF Java installation is not recognized by Visual Studio code. In that case, update the settings.json by going on the `Preferences > Settings` add add or update with the following sample, changing with your path for the JAVA_HOME and Java Runtimes:
 
-```json
-{
-  "java.configuration.runtimes": [
-    {
-      "name": "JavaSE-11",
-      "path": "/home/kali/.asdf/installs/java/corretto-11.0.13.8.1",
-      "default": true
-    }
-  ],
-  "java.home": "/home/kali/.asdf/installs/java/corretto-11.0.13.8.1"
-}
-```
+   ```json
+   {
+     "java.configuration.runtimes": [
+       {
+         "name": "JavaSE-11",
+         "path": "/home/kali/.asdf/installs/java/corretto-11.0.13.8.1",
+         "default": true
+       }
+     ],
+     "java.home": "/home/kali/.asdf/installs/java/corretto-11.0.13.8.1"
+   }
+   ```
+
+5. Install [Lombok plugin](https://projectlombok.org/setup/vscode) to improve Lombok annotations usage on code implementation

@@ -41,9 +41,7 @@ public class AuthenticationController extends BaseController {
         Authentication authentication = authenticationManager.authenticate(usernamePasswordAuthenticationToken);
 
         String jwt = tokenIssuerService.generateToken(authentication);
-        TokenDTO token = new TokenDTO();
-        token.setToken(jwt);
-        token.setType("Bearer");
+        TokenDTO token = TokenDTO.builder().token(jwt).type("Bearer").build();
         return ResponseEntity.ok(token);
 
     }
