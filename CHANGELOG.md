@@ -1,5 +1,10 @@
 # Changelog
 
+## 2021.12.10
+
+- Add `ModelMapper` to turn easier data object serialization and convertion into derived DTOs.
+  - this helps to select object attributes that holds entities relations data
+
 ## 2021.11.20
 
 - Readme project explanation
