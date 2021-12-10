@@ -23,7 +23,7 @@ public class HttpRequestSampleController {
       .get()
       .uri("/http-request-sample/get-server-hello")
       .retrieve()
-      .bodyToMono(String.class);
+      .bodyToMono(String.class);    
     return response.block();
   }
 

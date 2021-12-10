@@ -39,8 +39,11 @@ public class AuthenticationService implements UserDetailsService {
     if (userFound.isPresent()) {
       throw new Exception("Email alreary Taken");
     }
-    User user = User.builder().username(createUserDTO.getUsername()).email(createUserDTO.getEmail())
-        .password(passwordEncoder.encode(createUserDTO.getPassword())).build();
+    User user = User.builder()
+                    .username(createUserDTO.getUsername())
+                    .email(createUserDTO.getEmail())
+                    .password(passwordEncoder.encode(createUserDTO.getPassword()))
+                    .build();                    
     return userService.create(user);
   }
 }

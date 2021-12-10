@@ -17,9 +17,7 @@ import org.springframework.security.core.GrantedAuthority;
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthorizationProfile
-  extends BaseModel
-  implements GrantedAuthority {
+public class AuthorizationProfile extends BaseModel implements GrantedAuthority {
 
   private String authority;
 
