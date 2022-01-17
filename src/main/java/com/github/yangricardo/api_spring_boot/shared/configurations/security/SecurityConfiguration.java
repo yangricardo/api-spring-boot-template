@@ -47,16 +47,25 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
   // Configuration for authorization
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http.authorizeRequests()
-        .antMatchers(HttpMethod.POST, "/auth/**").permitAll()
-        .antMatchers("/values/**").permitAll()
-        .antMatchers("/http-request-sample/**").permitAll()
-        .antMatchers("/swagger-ui/**").permitAll()
-        .anyRequest().authenticated()
-        .and().csrf().disable()
-        .sessionManagement()
-        .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-        .addFilterBefore(this.tokenAuthenticationFilterService, UsernamePasswordAuthenticationFilter.class);
+    http
+      .cors()
+      .and()
+        .csrf()
+          .disable()
+          .sessionManagement()
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+      .and()
+        .authorizeRequests()
+            .antMatchers(HttpMethod.POST, "/auth/**").permitAll()
+            .antMatchers("/values/**").permitAll()
+            .antMatchers("/http-request-sample/**").permitAll()
+            .antMatchers("/swagger-ui/**").permitAll()
+            .anyRequest().authenticated()
+      .and()
+        .addFilterBefore(
+          this.tokenAuthenticationFilterService,
+          UsernamePasswordAuthenticationFilter.class
+        );
   }
 
   // Configuration for static resources
