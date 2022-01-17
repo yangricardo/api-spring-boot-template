@@ -8,7 +8,8 @@
 - Update `UserService` to manage and create user roles
 - Implement Security configuration context loader to create base `ROLE_ADMIN`  and `ROLE_USER` if needed
 - Update `TokenAuthenticationFilterService` due Role repository update
-- Update signup useer mapped data
+- Update signup user mapped data
+- Pre authorize creation of value route for `ROLE_USER`
 
 ## 2021.12.10
 

@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +33,7 @@ public class ValueController extends BaseController {
   }
 
   @GetMapping
-  @ResponseStatus(code = HttpStatus.FOUND)
+  @ResponseStatus(code = HttpStatus.OK)
   @ApiOperation(value = "Find all values")
   List<Value> index() {
     return this.valueService.index();
@@ -40,6 +41,7 @@ public class ValueController extends BaseController {
 
   @PostMapping
   @ApiOperation(value = "Create value")
+  @PreAuthorize("hasAnyRole('ROLE_USER','ROLE_ADMIN')")
   ResponseEntity<?> create(@Valid @RequestBody Value value, Errors errors) {
     if (!errors.hasErrors()) {
       Value valueCreated = this.valueService.create(value);
