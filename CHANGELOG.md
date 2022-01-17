@@ -4,6 +4,7 @@
 
 - Enable Pre Post anotations to authorization
 - Migrate `Authorization Profiles` to `Roles`
+- `RoleRepository` implementation
 
 ## 2021.12.10
 
