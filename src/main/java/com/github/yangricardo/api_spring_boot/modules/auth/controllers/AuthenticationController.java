@@ -6,7 +6,10 @@ import com.github.yangricardo.api_spring_boot.modules.auth.model.TokenDTO;
 import com.github.yangricardo.api_spring_boot.modules.auth.services.AuthenticationService;
 import com.github.yangricardo.api_spring_boot.modules.auth.services.TokenIssuerService;
 import com.github.yangricardo.api_spring_boot.modules.users.model.User;
+import com.github.yangricardo.api_spring_boot.modules.users.model.UserWithRolesDTO;
 import com.github.yangricardo.api_spring_boot.shared.modules.controllers.BaseController;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +35,9 @@ public class AuthenticationController extends BaseController {
   @Autowired
   private TokenIssuerService tokenIssuerService;
 
+  @Autowired
+  private ModelMapper modelMapper;
+
   @PostMapping("/login")
   public ResponseEntity<?> login(@RequestBody @Validated LoginDTO loginDTO) {
     UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
@@ -48,7 +54,9 @@ public class AuthenticationController extends BaseController {
   public ResponseEntity<?> signUp(@RequestBody CreateUserDTO createUserDTO) {
     try {
       User user = authenticationService.createUser(createUserDTO);
-      return ResponseEntity.ok(user);
+      return ResponseEntity.ok(
+        modelMapper.map(user, UserWithRolesDTO.class)
+      );
     } catch (Exception e) {
       return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
     }
