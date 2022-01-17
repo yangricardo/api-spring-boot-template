@@ -6,6 +6,7 @@
 - Migrate `Authorization Profiles` to `Roles`
 - `RoleRepository` implementation
 - Update `UserService` to manage and create user roles
+- Implement Security configuration context loader to create base `ROLE_ADMIN`  and `ROLE_USER` if needed
 
 ## 2021.12.10
 
