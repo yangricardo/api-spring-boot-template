@@ -5,6 +5,7 @@
 - Enable Pre Post anotations to authorization
 - Migrate `Authorization Profiles` to `Roles`
 - `RoleRepository` implementation
+- Update `UserService` to manage and create user roles
 
 ## 2021.12.10
 
