@@ -51,7 +51,7 @@ public class TokenAuthenticationFilterService extends OncePerRequestFilter {
       UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
         user,
         null,
-        user.getAuthorizationProfiles()
+        user.getRoles()
       );
       SecurityContextHolder
         .getContext()
