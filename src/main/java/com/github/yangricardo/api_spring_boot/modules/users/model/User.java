@@ -26,8 +26,6 @@ public class User extends BaseModel implements UserDetails {
 
   private String username;
 
-  private String email;
-
   private String password;
 
   @ManyToMany(fetch = FetchType.EAGER)

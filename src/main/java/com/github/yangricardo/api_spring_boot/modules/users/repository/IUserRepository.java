@@ -9,7 +9,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 @Transactional
 public interface IUserRepository extends CrudRepository<User, Long> {
-  Optional<User> findByEmail(String email);
-
   Optional<User> findByUsername(String username);
 }

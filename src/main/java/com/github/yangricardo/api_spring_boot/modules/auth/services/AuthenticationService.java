@@ -35,15 +35,14 @@ public class AuthenticationService implements UserDetailsService {
   }
 
   public User createUser(CreateUserDTO createUserDTO) throws Exception {
-    Optional<User> userFound = this.userService.findByEmail(createUserDTO.getEmail());
+    Optional<User> userFound = this.userService.findByUsername(createUserDTO.getUsername());
     if (userFound.isPresent()) {
-      throw new Exception("Email alreary Taken");
+      throw new Exception("Email already Taken");
     }
     User user = User.builder()
                     .username(createUserDTO.getUsername())
-                    .email(createUserDTO.getEmail())
                     .password(passwordEncoder.encode(createUserDTO.getPassword()))
-                    .build();                    
+                    .build();
     return userService.create(user);
   }
 }

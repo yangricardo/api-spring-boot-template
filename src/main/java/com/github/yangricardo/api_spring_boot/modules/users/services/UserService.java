@@ -22,11 +22,6 @@ public class UserService implements IUserService {
   }
 
   @Override
-  public Optional<User> findByEmail(String email) {
-    return this.userRepository.findByEmail(email);
-  }
-
-  @Override
   public Optional<User> findByUsername(String username) {
     return this.userRepository.findByUsername(username);
   }
