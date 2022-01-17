@@ -29,11 +29,11 @@ public class User extends BaseModel implements UserDetails {
   private String password;
 
   @ManyToMany(fetch = FetchType.EAGER)
-  private Set<AuthorizationProfile> authorizationProfiles;
+  private Set<Role> roles;
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
-    return this.authorizationProfiles;
+    return this.roles;
   }
 
   @Override

@@ -3,6 +3,7 @@
 ## 2022.01.17
 
 - Enable Pre Post anotations to authorization
+- Migrate `Authorization Profiles` to `Roles`
 
 ## 2021.12.10
 
