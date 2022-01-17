@@ -1,5 +1,9 @@
 # Changelog
 
+## 2022.01.17
+
+- Enable Pre Post anotations to authorization
+
 ## 2021.12.10
 
 - Add `ModelMapper` to turn easier data object serialization and convertion into derived DTOs.

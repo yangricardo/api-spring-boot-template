@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -18,6 +19,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(
+  prePostEnabled = true,
+  securedEnabled = true,
+  jsr250Enabled = true)
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
@@ -57,7 +62,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
       .and()
         .authorizeRequests()
             .antMatchers(HttpMethod.POST, "/auth/**").permitAll()
-            .antMatchers("/values/**").permitAll()
+            .antMatchers("/values/**").authenticated()
             .antMatchers("/http-request-sample/**").permitAll()
             .antMatchers("/swagger-ui/**").permitAll()
             .anyRequest().authenticated()
